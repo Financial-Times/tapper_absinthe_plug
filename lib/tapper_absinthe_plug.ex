@@ -38,7 +38,8 @@ defmodule Tapper.Plug.Absinthe do
 
   def init(opts), do: opts
 
-  def call(conn = %Plug.Conn{private: %{tapper_plug: tapper_id}}, _) do
+  @spec call(conn :: Plug.Conn.t, config :: any()) :: Plug.Conn.t
+  def call(conn = %Plug.Conn{private: %{tapper_plug: tapper_id}}, _config) do
     absinthe = conn.private[:absinthe] || %{context: %{}}
 
     absinthe = put_in(absinthe[:context][:tapper_id], tapper_id)
@@ -46,6 +47,6 @@ defmodule Tapper.Plug.Absinthe do
     put_private(conn, :absinthe, absinthe)
   end
 
-  def call(conn = %Plug.Conn{}, _), do: conn
+  def call(conn = %Plug.Conn{}, _config), do: conn
 
 end
