@@ -33,7 +33,6 @@ defmodule Tapper.Absinthe.Helper do
   def in_span(info = %Absinthe.Resolution{}, fun) when is_function(fun, 1) do
     tapper_id = Tapper.Plug.Absinthe.get(info)
     name = info.definition.schema_node.name
-    name = Absinthe.Utils.camelize(name, lower: true)
     child_id = Tapper.start_span(tapper_id, name: name)
     try do
       fun.(child_id)
