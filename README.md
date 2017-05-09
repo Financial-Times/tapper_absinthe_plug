@@ -1,4 +1,4 @@
-# Tapper.Plug.Absinthe
+# Tapper Absinthe Integration
 
 Works in concert with [`Tapper.Plug.Trace`](https://github.com/Financial-Times/tapper_plug)
 to propagate the Tapper Id into the Absinthe context.

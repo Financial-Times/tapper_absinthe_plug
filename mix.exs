@@ -6,6 +6,8 @@ defmodule Tapper.Plug.Absinthe.Mixfile do
      version: "0.1.0",
      elixir: "~> 1.4",
      build_embedded: Mix.env == :prod,
+     start_permanent: Mix.env == :prod,
+     source_url: "https://github.com/Financial-Times/tapper_absinthe_plug",
      package: package(),
      docs: docs(),
      deps: deps()]
@@ -18,9 +20,10 @@ defmodule Tapper.Plug.Absinthe.Mixfile do
   #   # Specify extra applications you'll use from Erlang/Elixir
   #   [extra_applications: [:logger]]
   # end
-  
+
   def package do
-    [ maintainers: ["Ellis Pritchard"],
+    [ files: ["lib", "mix.exs", "README.md"],
+      maintainers: ["Ellis Pritchard"],
       licenses: ["MIT"],
       links: %{"Github" => "https://github.com/Financial-Times/tapper_absinthe_plug"} ]
   end
