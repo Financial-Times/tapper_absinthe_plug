@@ -1,6 +1,6 @@
 # Tapper.Plug.Absinthe
 
-Works in concert with [`Tapper.Plug.Trace`](https://githib.com/Finacial-Times/tapper_plug) 
+Works in concert with [`Tapper.Plug.Trace`](https://github.com/Financial-Times/tapper_plug) 
 to propagate the Tapper Id into the Absinthe context.
 
 You can then access the Tapper Id via a resolver's `info` (`%Absinthe.Resolution{}`)
@@ -27,7 +27,7 @@ end
 ### See also
 
 * [Absinthe Guide - Context and Authentication](http://absinthe-graphql.org/guides/context-and-authentication/)
-* [`Tapper.Plug`](https://githib.com/Finacial-Times/tapper_plug)
+* [`Tapper.Plug`](https://github.com/Financial-Times/tapper_plug)
 
 ## Installation
 
