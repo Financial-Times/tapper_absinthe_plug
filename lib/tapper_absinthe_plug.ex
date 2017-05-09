@@ -1,8 +1,8 @@
 defmodule Tapper.Plug.Absinthe do
   @moduledoc """
-  Works in concert with [`Tapper.Plug.Trace`](https://github.com/Financial-Times/tapper_plug) 
+  Works in concert with [`Tapper.Plug.Trace`](https://github.com/Financial-Times/tapper_plug)
   to propagate the Tapper Id into the Absinthe context.
-  
+
   You can then access the Tapper id via a resolver's `info` (`%Absinthe.Resolution{}`)
   parameter, using this modules' `get/1` function.
 

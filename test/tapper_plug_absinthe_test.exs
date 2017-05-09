@@ -5,7 +5,7 @@ defmodule Tapper.Plug.AbsintheTest do
 
   test "creates absinthe context with tapper_id if context not present" do
     tapper_id = Tapper.Id.test_id()
-    
+
     conn = conn("GET", "/foo")
     |> put_private(:tapper_plug, tapper_id)
 
@@ -18,7 +18,7 @@ defmodule Tapper.Plug.AbsintheTest do
 
   test "updates absinthe context with tapper_id if context present" do
     tapper_id = Tapper.Id.test_id()
-    
+
     conn = conn("GET", "/foo")
     |> put_private(:absinthe, %{context: %{foo: :bar}})
     |> put_private(:tapper_plug, tapper_id)
