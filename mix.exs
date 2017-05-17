@@ -25,8 +25,7 @@ defmodule Tapper.Plug.Absinthe.Mixfile do
 
   def description do
     """
-    Works in concert with [`Tapper.Plug.Trace`](https://github.com/Financial-Times/tapper_plug)
-    to propagate the Tapper Id into the Absinthe context.
+    Works in concert with Tapper.Plug to propagate the Tapper Id into the Absinthe context.
     """
   end
 
