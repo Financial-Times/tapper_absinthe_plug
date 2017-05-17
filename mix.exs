@@ -7,6 +7,8 @@ defmodule Tapper.Plug.Absinthe.Mixfile do
      elixir: "~> 1.4",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
+     name: "Tapper Absinthe Plug",
+     description: description(),
      source_url: "https://github.com/Financial-Times/tapper_absinthe_plug",
      package: package(),
      docs: docs(),
@@ -21,15 +23,23 @@ defmodule Tapper.Plug.Absinthe.Mixfile do
     [extra_applications: [:logger]]
   end
 
+  def description do
+    """
+    Works in concert with [`Tapper.Plug.Trace`](https://github.com/Financial-Times/tapper_plug)
+    to propagate the Tapper Id into the Absinthe context.
+    """
+  end
+
   def package do
-    [ files: ["lib", "mix.exs", "README.md"],
+    [
       maintainers: ["Ellis Pritchard"],
       licenses: ["MIT"],
-      links: %{"Github" => "https://github.com/Financial-Times/tapper_absinthe_plug"} ]
+      links: %{"Github" => "https://github.com/Financial-Times/tapper_absinthe_plug"}
+    ]
   end
 
   def docs do
-    [main: "README",
+    [main: "readme",
      extras: ["README.md"]]
   end
 
@@ -45,12 +55,13 @@ defmodule Tapper.Plug.Absinthe.Mixfile do
   defp deps do
     [
       {:absinthe, "~> 1.3.0"},
-      {:tapper, git: "https://github.com/Financial-Times/tapper.git"},
+      {:tapper, "~> 0.1"},
       {:plug, "~> 1.0"},
       {:credo, "~> 0.5", only: [:dev, :test]},
       {:mix_test_watch, "~> 0.3", only: :dev, runtime: false},
       {:ex_doc, "~> 0.14", only: :dev, runtime: false},
-      {:dialyxir, "~> 0.5.0", only: [:dev]}
+      {:dialyxir, "~> 0.5.0", only: [:dev]},
+      {:inch_ex, ">= 0.0.0", only: :docs}
     ]
   end
 end
