@@ -3,7 +3,12 @@
 Works in concert with [`Tapper.Plug.Trace`](https://github.com/Financial-Times/tapper_plug)
 to propagate the Tapper Id into the Absinthe context.
 
-You can then access the Tapper Id via a resolver's `info` (`%Absinthe.Resolution{}`)
+[![Hex pm](http://img.shields.io/hexpm/v/tapper_absinthe_plug.svg?style=flat)](https://hex.pm/packages/tapper_absinthe_plug) [![Inline docs](http://inch-ci.org/github/Financial-Times/tapper_absinthe_plug.svg)](http://inch-ci.org/github/Financial-Times/tapper_absinthe_plug) [![Build Status](https://travis-ci.org/Financial-Times/tapper_absinthe_plug.svg?branch=master)](https://travis-ci.org/Financial-Times/tapper_absinthe_plug)
+
+
+## Synopsis
+
+Using this plug, you can access the Tapper Id via a resolver's `info` (`%Absinthe.Resolution{}`)
 parameter, using `Tapper.Plug.Absinthe.get/1`.
 
 In your router:
@@ -28,6 +33,7 @@ end
 * [Absinthe Guide - Context and Authentication](http://absinthe-graphql.org/guides/context-and-authentication/)
 * [`Tapper.Plug`](https://github.com/Financial-Times/tapper_plug)
 
+The API documentation can be found at [https://hexdocs.pm/tapper_absinthe_plug](https://hexdocs.pm/tapper_absinthe_plug).
 
 ## Helpers
 
@@ -74,8 +80,7 @@ def deps do
 end
 ```
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `tapper_plug_absinthe` to your list of dependencies in `mix.exs`:
+For release versions, the package can be installed by adding `tapper_absinthe_plug` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
@@ -83,7 +88,17 @@ def deps do
 end
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/tapper_plug_absinthe](https://hexdocs.pm/tapper_plug_absinthe).
+Add the `tapper_absinthe_plug`, `:tapper` and `:tapper_plug` applications to your mix project's applications to ensure 
+they are included in OTP applications:
 
+```elixir
+  # Configuration for the OTP application.
+  #
+  # Type `mix help compile.app` for more information.
+  def application do
+    [
+      mod: {MyApp, []},
+      applications: [:tapper, :tapper_plug, :tapper_absinthe_plug]
+    ]
+  end
+```
