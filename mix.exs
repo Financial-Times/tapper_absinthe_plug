@@ -7,6 +7,7 @@ defmodule Tapper.Plug.Absinthe.Mixfile do
      elixir: "~> 1.4",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
+     dialyzer: [plt_add_deps: :project],
      name: "Tapper Absinthe Plug",
      description: description(),
      source_url: "https://github.com/Financial-Times/tapper_absinthe_plug",
@@ -20,7 +21,7 @@ defmodule Tapper.Plug.Absinthe.Mixfile do
   # # Type "mix help compile.app" for more information
   def application do
     # Specify extra applications you'll use from Erlang/Elixir
-    [extra_applications: [:logger]]
+    [applications: [:tapper], extra_applications: [:logger]]
   end
 
   def description do
