@@ -88,8 +88,7 @@ def deps do
 end
 ```
 
-Add the `tapper_absinthe_plug`, `:tapper` and `:tapper_plug` applications to your mix project's applications to ensure 
-they are included in OTP applications:
+Ensure that the `:tapper` application is present in your mix project's applications:
 
 ```elixir
   # Configuration for the OTP application.
@@ -98,7 +97,7 @@ they are included in OTP applications:
   def application do
     [
       mod: {MyApp, []},
-      applications: [:tapper, :tapper_plug, :tapper_absinthe_plug]
+      applications: [:tapper]
     ]
   end
 ```
