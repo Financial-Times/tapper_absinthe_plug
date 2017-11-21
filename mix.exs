@@ -3,7 +3,7 @@ defmodule Tapper.Plug.Absinthe.Mixfile do
 
   def project do
     [app: :tapper_absinthe_plug,
-     version: "0.2.0",
+     version: "0.2.1",
      elixir: "~> 1.4",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
@@ -54,14 +54,14 @@ defmodule Tapper.Plug.Absinthe.Mixfile do
   # Type "mix help deps" for more examples and options
   defp deps do
     [
-      {:absinthe, "~> 1.3.0"},
+      {:absinthe, "~> 1.3"},
       {:tapper, "~> 0.2"},
       # {:tapper, github: "Financial-Times/tapper"},
       {:plug, "~> 1.0"},
       {:credo, "~> 0.5", only: [:dev, :test]},
       {:mix_test_watch, "~> 0.3", only: :dev, runtime: false},
       {:ex_doc, "~> 0.14", only: :dev, runtime: false},
-      {:dialyxir, "~> 0.5.0", only: [:dev]},
+      {:dialyxir, "~> 0.5", only: [:dev]},
       {:inch_ex, ">= 0.0.0", only: :docs}
     ]
   end

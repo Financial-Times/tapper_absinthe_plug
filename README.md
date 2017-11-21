@@ -76,7 +76,7 @@ For the latest pre-release (and unstable) code, add github repo to your mix depe
 
 ```elixir
 def deps do
-  [{:tapper_absinthe_plug, git: "https://github.com/Financial-Times/tapper_absinthe_plug"}]
+  [{:tapper_absinthe_plug, github: "Financial-Times/tapper_absinthe_plug"}]
 end
 ```
 
