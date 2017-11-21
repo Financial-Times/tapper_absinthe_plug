@@ -84,7 +84,7 @@ For release versions, the package can be installed by adding `tapper_absinthe_pl
 
 ```elixir
 def deps do
-  [{:tapper_absinthe_plug, "~> 0.1.0"}]
+  [{:tapper_absinthe_plug, "~> 0.2"}]
 end
 ```
 
