@@ -1,3 +1,5 @@
+# !!! This repository would be changed to private on 30th of September !!!
+
 # Tapper Absinthe Integration
 
 Works in concert with [`Tapper.Plug.Trace`](https://github.com/Financial-Times/tapper_plug)
